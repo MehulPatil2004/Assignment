@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Farmie</title>
+
+    <!-- Google Fonts and Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+
+<body class="font-poppins text-base sm:text-lg">
+
+    <!-- Top Info Bar -->
+    <section class="bg-slate-200">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row justify-between items-center py-2 text-xs gap-2">
+                <p>Welcome to Farmie, we hope you will enjoy our products and have good experience</p>
+                <ul class="flex flex-col sm:flex-col lg:flex-row gap-2 lg:gap-x-8">
+                    <li><a href="#" class="hover:text-green-500 duration-300">Email: infodeercreative@gmail.com</a></li>
+                    <li><a href="#" class="hover:text-green-500 duration-300">Call Us: +84 223 9000</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Header with Nav -->
+    <header class="bg-white shadow">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-3xl lg:text-5xl uppercase font-bold"><span class="text-green-500">Far</span>mie</h1>
+            <nav>
+                <ul id="nav" class="hidden lg:flex gap-7 text-slate-700"></ul>
+                <button id="menu-toggle" class="lg:hidden text-xl text-blue-600">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+        <div id="mobile-menu" class="lg:hidden hidden px-4 pb-4">
+            <ul class="flex flex-col gap-4 text-slate-700"></ul>
+        </div>
+    </header>
+
+    <!-- Image Slider -->
+    <div class="relative w-full overflow-hidden">
+        <div class="relative w-full h-[500px]">
+            <div class="slide absolute w-full h-full transition-opacity duration-1000 opacity-100">
+                <img src="https://www.deere.co.in/assets/images/region-1/products/tractors/john-deere-e-series-cab.jpg"
+                    class="w-full h-full object-cover" alt="Farm Tractor">
+            </div>
+            <div class="slide absolute w-full h-full transition-opacity duration-1000 opacity-0">
+                <img src="https://static.country-guide.ca/wp-content/uploads/2019/11/19122141/JD6Mmain-JohnDeere.jpg"
+                    class="w-full h-full object-cover" alt="Tractor">
+            </div>
+            <div class="slide absolute w-full h-full transition-opacity duration-1000 opacity-0">
+                <img src="https://wallpapers.com/images/featured/vegetables-pictures-qs8trfk65nvldcyr.jpg"
+                    class="w-full h-full object-cover" alt="Vegetables">
+            </div>
+            <div
+                class="absolute inset-0 bg-black/40 flex items-center justify-center text-white text-3xl lg:text-4xl font-bold text-center px-4">
+                The heart of the farm is the true center of our universe.
+            </div>
+
+            <!-- Slide buttons -->
+            <div class="absolute inset-0 flex items-center justify-between px-6 z-10">
+                <button onclick="changeimg(-1)" class="bg-black text-white p-3 rounded-full hover:scale-105 transition">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button onclick="changeimg(1)" class="bg-black text-white p-3 rounded-full hover:scale-105 transition">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- New Features -->
+    <div class="p-12">
+        <img class="rounded-lg" src="https://preview.colorlib.com/theme/farmie/img/bg-img/2.jpg">
+    </div>
+
+    <div class="p-6 m-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 ">
+        <div>
+            <figure class="flex justify-center">
+                <img src="https://preview.colorlib.com/theme/farmie/img/core-img/digger.png" alt="">
+            </figure>
+            <p class="text-2xl text-center">Best Services</p>
+        </div>
+        <div>
+            <figure class="flex justify-center">
+                <img src="https://preview.colorlib.com/theme/farmie/img/core-img/windmill.png" alt="">
+            </figure>
+            <p class="text-2xl text-center">Farm Experiences</p>
+        </div>
+        <div>
+            <figure class="flex justify-center">
+                <img src="https://preview.colorlib.com/theme/farmie/img/core-img/cereals.png" alt="">
+            </figure>
+            <p class="text-2xl text-center">100% Natural</p>
+        </div>
+        <div>
+            <figure class="flex justify-center">
+                <img src="https://preview.colorlib.com/theme/farmie/img/core-img/tractor.png" alt="">
+            </figure>
+            <p class="text-2xl text-center">Farm Equipment</p>
+        </div>
+        <div>
+            <figure class="flex justify-center">
+                <img src="https://preview.colorlib.com/theme/farmie/img/core-img/sunrise.png" alt="">
+            </figure>
+            <p class="text-2xl text-center">Organic Food</p>
+        </div>
+
+    </div>
+
+    <div class="text-wrap p-6 m-3 flex flex-col lg:flex-row justify-center" id="about">
+        <div>
+            <h4 class="p-1 text-lg">About us</h4>
+            <h1 class="text-3xl lg:text-4xl Capitalize font-bold p-1"><span class="text-green-500">Let Us</span> Tell
+                You Our Story<img src="https://preview.colorlib.com/theme/farmie/img/core-img/decor.png" alt=""></h1>
+            </h1>
+            <p class="p-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias corporis nobis dolorem ullam,
+                consectetur ratione. Consequatur nisi sequi, delectus incidunt labore quod at impedit fuga veniam
+                accusamus quam repellat dolorum! </p>
+            <button class="p-3 m-3 bg-sky-500 hover:bg-sky-700 bottom-left">Read More</button>
+        </div>
+        <div class="">
+            <img src="https://preview.colorlib.com/theme/farmie/img/bg-img/6.jpg" alt="Story image"
+                class="w-2xl h-2xl rounded-full shadow">
+        </div>
+    </div>
+
+    <div class="flex flex-col lg:flex-row bg-gray-100 p-6 m-3 gap-8">
+        <!-- Left side (image or space) -->
+        <div class="w-1/2 p-6 flex items-center justify-center">
+            <!-- You can replace this with an actual image if you want -->
+            <img src="https://www.lalpathlabs.com/blog/wp-content/uploads/2019/01/Fruits-and-Vegetables.jpg"
+                alt="Placeholder" class="rounded shadow">
+        </div>
+
+        <!-- Right side (text) -->
+        <div class="lg:w-1/2 p-6"> 
+            <h4 class="p-1 text-lg mb-2">WHAT WE DO</h4>
+            <h1 class="text-3xl lg:text-3xl capitalize font-bold p-1 gap-2 mb-4">
+                <span class="text-green-500">Our Produce</span> Is Mainstay For Us
+                <img src="https://preview.colorlib.com/theme/farmie/img/core-img/decor.png" alt="">
+            </h1>
+            <p class="mb-4">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti cum quibusdam provident quas
+                doloremque
+                harum blanditiis odio expedita officiis eligendi, consectetur deserunt inventore dignissimos nihil ipsam
+                illo sit nesciunt possimus.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                <div class="flex items-center">
+                    <img src="https://preview.colorlib.com/theme/farmie/img/core-img/s1.png" alt="">
+                    <h4 class="pl-4">Fruit & Vegetable</h4>
+                </div>
+                <div class="flex items-center">
+                    <img src="https://preview.colorlib.com/theme/farmie/img/core-img/s4.png" alt="">
+                    <h4 class="pl-4">Rice & Corn</h4>
+                </div>
+            </div>
+            <div class="flex">
+                <p class="pr-4">Totam itaque neque quasi omnis! Cupiditate minus et doloremque, ut exercitationem vero
+                    nemo est?</p>
+                <p class="pr-4"> Totam itaque neque quasi omnis! Cupiditate minus et doloremque, ut exercitationem vero
+                    nemo est?</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================================================================== -->
+
+    <div class="p-6">
+        <h4 class="text-center text-lg">FEATURED PRODUCTS</h4>
+        <h1 class="text-center text-3xl capitalize font-bold p-6"><span class="text-green-500">Our Product</span> Are
+            Highest Quality
+            <div class="flex justify-center">
+                <img src="https://preview.colorlib.com/theme/farmie/img/core-img/decor2.png" alt="">
+            </div>
+        </h1>
+    </div>
+
+    <!-- Features Section -->
+    <section class="max-w-7xl mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Feature Box -->
+            <div class="bg-red-50 p-6 rounded-lg shadow-sm hover:bg-white hover:shadow-lg transition duration-300">
+                <i class="fa-solid fa-gears text-red-600 text-4xl mb-4"></i>
+                <h3 class="text-xl font-semibold mb-2">
+                    <a href="#" class="text-black hover:text-red-600 transition">Technical Farming</a>
+                </h3>
+                <p class="text-sm leading-relaxed text-gray-600">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae optio explicabo corrupti.
+                </p>
+            </div>
+
+            <div class="bg-red-50 p-6 rounded-lg shadow-sm hover:bg-white hover:shadow-lg transition duration-300">
+                <i class="fa-solid fa-tarp text-red-600 text-4xl mb-4"></i>
+                <h3 class="text-xl font-semibold mb-2">
+                    <a href="#" class="text-black hover:text-red-600 transition">Biggest Production</a>
+                </h3>
+                <p class="text-sm leading-relaxed text-gray-600">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae optio explicabo corrupti.
+                </p>
+            </div>
+
+            <div class="bg-red-50 p-6 rounded-lg shadow-sm hover:bg-white hover:shadow-lg transition duration-300">
+                <i class="fa-solid fa-briefcase text-red-600 text-4xl mb-4"></i>
+                <h3 class="text-xl font-semibold mb-2">
+                    <a href="#" class="text-black hover:text-red-600 transition">Market Research</a>
+                </h3>
+                <p class="text-sm leading-relaxed text-gray-600">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae optio explicabo corrupti.
+                </p>
+            </div>
+
+            <div class="bg-red-50 p-6 rounded-lg shadow-sm hover:bg-white hover:shadow-lg transition duration-300">
+                <i class="fa-solid fa-thumbs-up text-red-600 text-4xl mb-4"></i>
+                <h3 class="text-xl font-semibold mb-2">
+                    <a href="#" class="text-black hover:text-red-600 transition">Best Quality</a>
+                </h3>
+                <p class="text-sm leading-relaxed text-gray-600">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae optio explicabo corrupti.
+                </p>
+            </div>
+
+            <div class="bg-red-50 p-6 rounded-lg shadow-sm hover:bg-white hover:shadow-lg transition duration-300">
+                <i class="fa-solid fa-cart-shopping text-red-600 text-4xl mb-4"></i>
+                <h3 class="text-xl font-semibold mb-2">
+                    <a href="#" class="text-black hover:text-red-600 transition">Online Marketing</a>
+                </h3>
+                <p class="text-sm leading-relaxed text-gray-600">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae optio explicabo corrupti.
+                </p>
+            </div>
+
+            <div class="bg-red-50 p-6 rounded-lg shadow-sm hover:bg-white hover:shadow-lg transition duration-300">
+                <i class="fa-regular fa-copy text-red-600 text-4xl mb-4"></i>
+                <h3 class="text-xl font-semibold mb-2">
+                    <a href="#" class="text-black hover:text-red-600 transition">Tax Strategy</a>
+                </h3>
+                <p class="text-sm leading-relaxed text-gray-600">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae optio explicabo corrupti.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us -->
+    <div class="flex flex-col md:flex-row items-start justify-center gap-10 p-10">
+        <!-- Contact Form Section -->
+        <div class="w-full max-w-lg bg-gray-200 p-8 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-semibold mb-4 text-center">Contact Us</h2>
+            <form action="#" method="POST">
+                <div class="mb-4">
+                    <label for="name" class="block text-lg">Name</label>
+                    <input type="text" id="name" class="w-full p-3 border rounded-md" placeholder="Your Name">
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-lg">Email</label>
+                    <input type="email" id="email" class="w-full p-3 border rounded-md" placeholder="Your Email">
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="block text-lg">Message</label>
+                    <textarea id="message" class="w-full p-3 border rounded-md" rows="4"
+                        placeholder="Your Message"></textarea>
+                </div>
+                <button type="submit"
+                    class="bg-blue-500 text-white p-3 rounded-md hover:bg-blue-600 w-full">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Navigation Menu
+        const nav = document.getElementById("nav");
+        const mobileMenu = document.querySelector("#mobile-menu ul");
+        const menuToggle = document.getElementById("menu-toggle");
+
+        const menuList = [
+            { path: "", pathname: "Home", },
+            { path: "about", pathname: "About", },
+            { path: "pages", pathname: "Pages" },
+            { path: "contact", pathname: "Contact" },
+            { path: "#", pathname: `<i class="fa-brands fa-searchengin"></i>` },
+            { path: "#", pathname: `<i class="fa-solid fa-cart-shopping"></i>` }
+        ];
+
+        menuList.forEach(item => {
+            const li = document.createElement("li");
+            li.innerHTML = `<a href="#${item.path}" class="hover:text-green-500 transition">${item.pathname}</a>`;
+            nav.appendChild(li.cloneNode(true));
+            mobileMenu.appendChild(li);
+        });
+
+        menuToggle.addEventListener("click", () => {
+            document.getElementById("mobile-menu").classList.toggle("hidden");
+        });
+
+        // Image Slider
+        let index = 0;
+        const slides = document.querySelectorAll(".slide");
+
+        function slidechange(n) {
+            if (n >= slides.length) index = 0;
+            if (n < 0) index = slides.length - 1;
+
+            slides.forEach((slide, i) => {
+                slide.classList.remove("opacity-100");
+                slide.classList.add("opacity-0");
+                if (i === index) {
+                    slide.classList.remove("opacity-0");
+                    slide.classList.add("opacity-100");
+                }
+            });
+        }
+
+        function changeimg(step) {
+            index += step;
+            slidechange(index);
+        }
+
+        setInterval(() => changeimg(1), 3000);
+        slidechange(index);
+    </script>
+</body>
+
+</html>
